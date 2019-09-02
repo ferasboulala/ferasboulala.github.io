@@ -3,7 +3,7 @@ layout: post
 title: "Better Algorithm or Better Hardware?"
 ---
 
-In algorithmics, asymptotic analysis is used to describe the growth of functions that represent ressource usage (time and space). We say that algorithm $A$'s time complexity, $T: \ \mathbb{N} \to \mathbb{R}$ with relation to a function $f: \ \mathbb{N} \to \mathbb{R}$ is either
+In algorithmics, asymptotic analysis is used to describe the growth of functions that represent ressource usage (time and space). We say that algorithm $A$'s time complexity, $$T: \ \mathbb{N} \to \mathbb{R}_+$$ with relation to a function $$f: \ \mathbb{N} \to \mathbb{R}_+$$ is either
 
 1. $T(n) \in O(f(n)) \iff \exists c \in \mathbb{R}_+ \land \exists n_0 \in \mathbb{N} \mid 0 \leq T(n) \leq cf(n) \ \ \forall n \geq n_0$
 2. $T(n) \in \Theta(f(n)) \iff \exists c_1, c_2 \in \mathbb{R}_+ \land \exists n_0 \in \mathbb{N} \mid 0 \leq c_1f(n) \leq T(n) \leq c_2f(n) \ \ \forall n \geq n_0$
@@ -15,7 +15,7 @@ I was always wondering what does the notation tell us about the growth of the in
 
 __Given an algorithm $A$ with a ressource consumption given by $T(n)$, available ressource $R$ and a speedup of $k$, how much larger can $n$ be such that $T(n) \leq R$ is maintained?__
 
-In other words, if my current system runs algorithm $A$ in $R$, if I were to upgrade for a better system that would run $k$ faster, how much larger $n$ be and still statisfy the ressource constraint. A speedup of $k$ means that
+In other words, if my current system runs algorithm $A$ in $R$, if I were to upgrade for a better system that would run $k$ faster, how much larger $n$ be and still statisfy the ressource constraint. Here, $R$ is not an entirely accurate representation of the ressource consumption of an algorithm as it is difficult to map an algorithm into an exact value. Rather, we are interest into the _behavior_ of the algorithm and the magnitude of its input when ressources are finite. A speedup of $k$ means that
 
 $$\frac{T(n_1)}{T'(n_2)} = k \tag{1}$$
 
@@ -25,13 +25,13 @@ $$T(n_1) \leq R \implies n_1 \leq T^{-1}(R)$$
 
 With equation 1, we can deduce that
 
-$$T(n_2) \leq kR \implies n_2 \leq T^{-1}(kR)$$
+$$T'(n_2) \leq kR \implies n_2 \leq T'^{-1}(kR)$$
 
 And so
 
-$$\frac{n_2}{n_1} \leq \frac{T^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
+$$\frac{n_2}{n_1} \leq \frac{T'^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
 
-With this in hand, we can substitute $T$ for any function and get our result. Here is a table of common functions:
+With this in hand, we can substitute $T$ (and $T'$ which happens to be the same function) for any function and get our result. Here is a table of common functions:
 
 <center>
 <table style="width:75%">
@@ -54,4 +54,6 @@ With this in hand, we can substitute $T$ for any function and get our result. He
 </table>
 </center>
 
-Notice how the slowest growing functions provide the largest growing ratio of input. For exponential functions, notice how the input can barely be any larger because of the base of the logarithm (and the logarithm itself that has a slow growth, relatively speaking). Finally, it is interesting that both logarithmic and exponential functions depend on the the value of $R$. A larger $R$ makes logarithmic functions all the more worth the it whereas, as just stated, exponential functions will be severely hindered in their acceptable input size. In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. A better algorithm will let you do even more with a better hardware.
+Notice how the slowest growing functions provide the largest growing ratio of input. For exponential functions, notice how the input can barely be any larger because of the base of the logarithm (and the logarithm itself that has a slow growth, relatively speaking). Finally, it is interesting that both logarithmic and exponential functions depend on the the value of $R$. A larger $R$ makes logarithmic functions all the more worth the it whereas, as just stated, exponential functions will be severely hindered in their acceptable input size. To double the input size of an algorithm that follows an exponential growth, one would have to get a computer $R$ times faster...
+
+In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. A better algorithm will let you do even more with a better hardware.

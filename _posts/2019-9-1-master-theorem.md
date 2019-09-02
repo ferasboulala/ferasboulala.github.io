@@ -48,8 +48,6 @@ $$= f(n) + a \left[ f\left(\frac{n}{b}\right) + a \left[ f\left(\frac{n}{b^2}\ri
 
 $$= f(n) + af(n/b) + a^2f(n/b^2) + \ ... \ + a^{ \log_b n } f(1)$$
 
-$$= f(n) + af(n/b) + a^2f(n/b^2) + \ ... \ + n^{ \log_b a } f(1)$$
-
 $$= \sum_{i=0}^{ \log_b n } a^i f(n/b^i) \tag{3}$$
 
 The idea behind the expansion is to compare the work that is done by the current call compared to previous calls. If we take a look at each recursive call, we observe that $$a$$ and $$b$$ are directly affecting the asymptotic analysis of the algorithm. A larger $$a$$ and a asymptotically larger $$f$$ will make each recursive calls more costly whereas a larger $$b$$ will reduce the amount of recursive calls.
@@ -90,4 +88,6 @@ $$ \log_b a < k$$
 
 $$ n^{\log_ba} < n^k \implies f(n) \in \Omega(n ^ { \log_ba + \epsilon }) \land \epsilon > 0$$
 
-And there we have it, the third case of the theorem. The two others can be derived the same way. The Master Theorem is no longer the intimidating theorem that it used to be. It all came down to a geometric serie with three interesting edge cases.
+And there we have it, the third case of the theorem. The two others can be derived the same way. The Master Theorem is no longer the intimidating theorem that it used to be. It all came down to a geometric serie with three interesting edge cases. 
+
+Note: This is by no means a proof to the theorem. The assumption on $f$ being a polynomial function does not cover all the cases.

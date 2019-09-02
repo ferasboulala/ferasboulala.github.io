@@ -13,7 +13,7 @@ Notice how the $\in$ operator has been used because $O$, $\Theta$ and $\Omega$ a
 
 I was always wondering what does the notation tell us about the growth of the input size or magnitude $n$. In the real world, we usually have a finite set of ressources. We want our algorithms to run fast and not to exceed a certain time to terminate or to hog too much memory. To accomplish a task faster, we can pick a different algorithm with a better complexity (for the given circumstances) or upgrade the hardware on which it is running. Upgrading the hardware will usually have a straightforward effect on the algorithm. All things being equal, a processor twice the clock speed of another will perform about twice faster. But how does that affect the input size ? Is it ever worth upgrading hardware ? Formally,
 
-__Given an algorithm $A$ with a complexity of $T(n)$, available ressource $R$ and a speedup of $k$, how much larger can $n$ be such that $T(n) < R$ ?__
+__Given an algorithm $A$ with a ressource consumption given by $T(n)$, available ressource $R$ and a speedup of $k$, how much larger can $n$ be such that $T(n) \leq R$ is maintained?__
 
 In other words, if my current system runs algorithm $A$ in $R$, if I were to upgrade for a better system that would run $k$ faster, how much larger $n$ be and still statisfy the ressource constraint. A speedup of $k$ means that
 
@@ -29,7 +29,7 @@ $$T(n_2) \leq kR \implies n_2 \leq T^{-1}(kR)$$
 
 And so
 
-$$\frac{n_2}{n_1} = \frac{T^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
+$$\frac{n_2}{n_1} \leq \frac{T^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
 
 With this in hand, we can substitute $T$ for any function and get our result. Here is a table of common functions:
 

@@ -72,7 +72,7 @@ This sum is a geometric serie of the form $$\sum_{i=0}^k c^i = \frac{c^{k+1} - 1
 2. $$c = 1 \implies a = b^k$$. This is a trivial case. $T(n) \in \Theta(n \log n)$.
 3. $$c > 1 \implies a > b^k$$ :
 
-    $$\frac{c \cdot n^{\log_bc} - 1}{c - 1} = \frac{\frac{a}{b^k} \cdot n^{\log_b{\frac{a}{b^k}}} - 1}{\frac{a}{b^k} - 1} \in O(n^{\log_ba - k})$$
+    $$\frac{c \cdot n^{\log_bc} - 1}{c - 1} = \frac{\frac{a}{b^k} \cdot n^{\log_b{\frac{a}{b^k}}} - 1}{\frac{a}{b^k} - 1} \in \Theta(n^{\log_ba - k})$$
 
 And so $T(n) \in \Theta(n^{\log_ba})$. In order to prove that we have in hand the Master Theorem itself, it is required to describe the the relationship between $f(n) = n^k$ and constants $a$ and $b$. For the first case, we stated that
 

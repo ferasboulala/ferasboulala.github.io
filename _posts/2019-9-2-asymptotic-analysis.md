@@ -13,13 +13,13 @@ Notice how the $\in$ operator has been used because $O$, $\Theta$ and $\Omega$ a
 
 I was always wondering what does the notation tell us about the growth of the input size or magnitude $n$. In the real world, we usually have a finite set of ressources. We want our algorithms to run fast and not to exceed a certain time to terminate or to hog too much memory. To accomplish a task faster, we can pick a different algorithm with a better complexity (for the given circumstances) or upgrade the hardware on which it is running. Upgrading the hardware will usually have a straightforward effect on the algorithm. All things being equal, a processor twice the clock speed of another will perform about twice faster. But how does that affect the input size ? Is it ever worth upgrading hardware ? Formally,
 
-__Given an algorithm $A$ with a ressource consumption given by $T(n)$, available ressource $R$ and a speedup of $k$, how much larger can $n$ be such that $T(n) \leq R$ is maintained?__
+__Given an algorithm $A$ with a ressource consumption given by $T(n)$, available ressource $R$ and a speedup of $k$, how much larger can $n$ be such that $T(n) \leq R$?__
 
 In other words, if my current system runs algorithm $A$ in $R$, if I were to upgrade for a better system that would run $k$ faster, how much larger $n$ be and still statisfy the ressource constraint. Here, $R$ is not an entirely accurate representation of the ressource consumption of an algorithm as it is difficult to map an algorithm into an exact value. Rather, we are interest into the _behavior_ of the algorithm and the magnitude of its input when ressources are finite. A speedup of $k$ means that
 
 $$\frac{T(n_1)}{T'(n_2)} = k \tag{1}$$
 
-where $T'$ represents the ressource consumption of the new system. Notice how we avoided using the asymptotic analysis notation because it does not include constants, that is $T(n) \in \Theta(T'(n))$ does not tell us much. The objective is to determine the relationship between $n_1$ and $n_2$. We know that
+where $T'$ represents the ressource consumption of the new system. The objective is to determine the relationship between $n_1$ and $n_2$. We know that
 
 $$T(n_1) \leq R \implies n_1 \leq T^{-1}(R)$$
 
@@ -56,4 +56,4 @@ With this in hand, we can substitute $T$ (and $T'$ which happens to be the same 
 
 Notice how the slowest growing functions provide the largest growing ratio of input. For exponential functions, notice how the input can barely be any larger because of the base of the logarithm (and the logarithm itself that has a slow growth, relatively speaking). Finally, it is interesting that both logarithmic and exponential functions depend on the the value of $R$. A larger $R$ makes logarithmic functions all the more worth the it whereas, as just stated, exponential functions will be severely hindered in their acceptable input size. To double the input size of an algorithm that follows an exponential growth, one would have to get a computer $R$ times faster...
 
-In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. A better algorithm will let you do even more with a better hardware.
+In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. But it is not always about chosing one over the other. It is evident that a better algorithm will let you do even more with better hardware. A logarithmic algorithm will perform exponentially better with better hardware.

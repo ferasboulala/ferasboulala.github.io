@@ -17,7 +17,7 @@ __Given an algorithm $A$ with a ressource consumption given by $T(n)$, available
 
 In other words, if my current system runs algorithm $A$ in $R$, if I were to upgrade for a better system that would run $k$ faster, how much larger $n$ be and still statisfy the ressource constraint. Here, $R$ is not an entirely accurate representation of the ressource consumption of an algorithm as it is difficult to map an algorithm into an exact value. Rather, we are interest into the _behavior_ of the algorithm and the magnitude of its input when ressources are finite. A speedup of $k$ means that
 
-$$\frac{T(n_1)}{T'(n_2)} = k \tag{1}$$
+$$\frac{T(n)}{T'(n)} = k \tag{1}$$
 
 where $T'$ represents the ressource consumption of the new system. The objective is to determine the relationship between $n_1$ and $n_2$. We know that
 
@@ -25,13 +25,13 @@ $$T(n_1) \leq R \implies n_1 \leq T^{-1}(R)$$
 
 With equation 1, we can deduce that
 
-$$T'(n_2) \leq kR \implies n_2 \leq T'^{-1}(kR)$$
+$$T(n_2) \leq kR \implies n_2 \leq T^{-1}(kR)$$
 
 And so
 
-$$\frac{n_2}{n_1} \leq \frac{T'^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
+$$\frac{n_2}{n_1} \leq \frac{T^{-1}(kR)}{T^{-1}(R)} \tag{2}$$
 
-With this in hand, we can substitute $T$ (and $T'$ which happens to be the same function) for any function and get our result. Here is a table of common functions:
+With this in hand, we can substitute $T$ for any function and get our result. Here is a table of common functions:
 
 <center>
 <table style="width:75%">

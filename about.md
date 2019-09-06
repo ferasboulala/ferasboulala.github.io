@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a software engineer that has a passion for algorithmics and discrete mathematics.
+I am a software engineer that has a passion for algorithmics, discrete mathematics and general software engineering.
 
 
 ### Contact me

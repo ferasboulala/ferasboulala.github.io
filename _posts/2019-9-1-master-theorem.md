@@ -3,12 +3,12 @@ layout: post
 title: "Master Theorem: An Intuitive Approach"
 ---
 
-In this post, I would like to go through an intuitive approach leading to the Master Theorem. It is a theorem used in computer science to get the asymptotical analysis of a divide and conquer algorithm. Formally, it is used to solve a reccurence.
+In this post, I would like to go through an intuitive approach leading to the Master Theorem. It is a theorem used in computer science and mathematics to get the asymptotical analysis of a divide and conquer algorithm. Formally, it is used to solve a reccurence.
 
 ## Divide And Conquer
 Divide and conquer is a class of algorithms that aim to solve a problem by dividing it into smaller chunks and recursively solving them. Generally, once the recursion is over, there is a final step that aims to combine the result of the recursive calls into a valid output.
 
-A common representative of this class of algorithms is `merge-sort`. The input list is split in half and sorted by a recursive call (until the lists have a size of 1). Once both sides are sorted, the algorithm will merge the lists into a larger sorted list. It is rather difficult not to be charmed by the elegance of these algorithms. Nowhere in the process of sorting a list with `merge-sort` do we explicitly sort the two halves of the list. Instead, we start from the trivial case of the single item lists and work our way up by merging sorted lists.
+A common representative of this class of algorithms is `merge-sort`. The input list is split in half and sorted by a recursive call (until the lists have a size of 1). Once both sides are sorted, the algorithm will merge the lists into a larger sorted list. It is rather difficult not to be charmed by the elegance of these algorithms. Nowhere in the process of sorting a list with `merge-sort` do we explicitly sort the two halves of the list. Instead, we start from the trivial base case of the single item lists and work our way up by merging sorted lists.
 
 ## Master Theorem
 Divide and conquer algorithms' performance is usually modeled by a recurrence of the following form:

@@ -9,11 +9,11 @@ The time taken by quicksort can be modeled by the following recurrence:
 
 $$T(n) = T(q) + T(n - q) + cn \ \ 1 \leq q \leq n - 1$$
 
-Note that an ideal split would be when $1=\frac{n}{2}$ and the worst split is when $1 = \{1, n - 1\}$. Using the Master Theorem, it can be shown that for any value of $1$ that is not a proportion of $n$, $T(n) \in \Theta(n^2)$. Sometimes, it is convenient to rewrite the recurrence with a proportion term, $\alpha$ and it is that form that we will use for the remainder of this post.
+Note that an ideal split would be when $1=\frac{n}{2}$ and the worst split is when $q = \{1, n - 1\}$. Using the Master Theorem, it can be shown that for any value of $1$ that is not a proportion of $n$, $T(n) \in \Theta(n^2)$. Sometimes, it is convenient to rewrite the recurrence with a proportion term, $\alpha$ and it is that form that we will use for the remainder of this post.
 
 $$T(n) = T(\alpha n) + T((1-\alpha)n) + cn \ \ 0 < \alpha < 1 \tag{1}$$
 
-`quicksort`'s performance relies mostly on the strategy that we use to select the median. But why would a sorting algorithm be so popular if its worst case runtime behaves similarily to ugly, subpar algorithms like `insertion-sort` or `bubble-sort` ? Even if we were to shuffle the input array, there is still a possibility that our median was a bad choice. But how likely is it ? At any time during the algorithm, how likely is it that we get a bad split ? Formally,
+`quicksort`'s performance relies mostly on the strategy that we use to select the median. But why would a sorting algorithm be so popular if its worst case runtime behaves similarily to ugly, subpar algorithms like `insertion-sort` or `bubble-sort` ? Is it simply because of its average performance being better than the alternatives ? Lack of guarantees for non-critical systems ? Even if we were to shuffle the input array, there is still a possibility that our median was a bad choice. But how likely is it ? How likely is it that we get a bad split ? Formally,
 
 __Given an array of $n$ distinct elements and a desired split of $\alpha$-to-$(1-\alpha)$, how likely is it to get a worse split ?__
 
@@ -29,7 +29,7 @@ $$
 A popular strategy to median selection is to randomly pick an element from the array, rather than shuffling it and picking an element at a specific index. The probability that we get a worse split is the probability that we randomly pick all the elements that would make a worse median. There are $2 \cdot n \cdot \alpha$ elements that fit this criteria. The probability to pick one of those elements is $\frac{1}{n}$. Multiplying, we obtain $2\alpha$.
 
 ## Third time's the charm
-Another approach to median selection is to pick three elements at distinct indices and to select the median out of them. The rationale behind this method would be that the probability of getting a inadequate median is lowered. For simplicity's sake, we will assume that it is possible to select one element more than once. The probability that we select a worse median than $\alpha$ is twice the probability that at least two elements are picked from the $\alpha n$ smaller elements (the problem is symetrical). This comes down to the sum of the probability that three elements are in that range and that exactly two are in that range. 
+Another approach to median selection is to pick three elements at distinct indices and to select the median out of them. The rationale behind this method would be that the probability of getting a inadequate median is lowered. We will assume that it is possible to select one element more than once. The probability that we select a worse median than $\alpha$ is twice the probability that at least two elements are picked from the $\alpha n$ smaller elements (the problem is symetrical). This comes down to the sum of the probability that three elements are in that range and that exactly two are in that range. 
 
 $$
 P[\text{two elements in $\alpha n$}] = P[\text{three elements in $\alpha n$}] + P[\text{exactly two elements in $\alpha n$}] \\
@@ -58,7 +58,7 @@ This sum cannot be simplified. But simplification is not required if we want to 
 
 ![results](/images/quicksort-median.png)
 
-As expected, it looks like picking more elements to get a better probability of a good median becomes less and less worth the increased runtime (notice how the curve along the $k$ axis, when $\alpha=0.1$, barely moves anymore after $k=5$).
+As expected, it looks like picking more elements to get a better probability of a good median becomes less and less worth the increased runtime (notice how the curve along the $k$ axis, when $\alpha=0.1$, barely moves anymore when $k > 5$).
 
 ## I want guarantees
-What if we wanted a guarantee on the behavior of `quicksort` ? What if we selected the true median with a common algorithm like `median-of-median` that runs in $O(n)$. That would not change the time complexity of the algorithm but it would heavily impact the runtime of the algorithm nonetheless because of the hidden constants. Given the previous results, it is deemed better to fallback into a simple median strategy that yields good results most of the time and opt for other sorting algorithms like `mergesort` or `heapsort` for systems that require guarantees.
+What if we wanted a guarantee on the behavior of `quicksort` ? What if we selected the true median with a common algorithm like `median-of-median` that runs in $O(n)$. That would not change the time complexity of the algorithm but it would heavily impact the runtime of the algorithm nonetheless, because of the hidden constants. Given the previous results, it is deemed better to fallback to a simple median strategy that yields good results most of the time and opt for other sorting algorithms like `mergesort` or `heapsort` for systems that require guarantees.

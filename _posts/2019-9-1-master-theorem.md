@@ -91,3 +91,6 @@ $$ n^{\log_ba} < n^k \implies f(n) \in \Omega(n ^ { \log_ba + \epsilon }) \land 
 And there we have it, the third case of the theorem. The two others can be derived the same way. The Master Theorem is no longer the intimidating theorem that it used to be. It all came down to a geometric serie with three interesting edge cases. 
 
 Note: This is by no means a proof to the theorem. The assumption on $f$ being a polynomial function does not cover all the cases.
+
+### References
+    - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.

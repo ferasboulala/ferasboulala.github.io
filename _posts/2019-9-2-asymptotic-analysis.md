@@ -57,3 +57,6 @@ With this in hand, we can substitute $T$ for any function and get our result. He
 Notice how the slowest growing functions provide the largest growing ratio of input. For exponential functions, notice how the input can barely be any larger because of the base of the logarithm (and the logarithm itself that has a slow growth, relatively speaking). Finally, it is interesting that both logarithmic and exponential functions depend on the the value of $R$. A larger $R$ makes logarithmic functions all the more worth the it whereas, as just stated, exponential functions will be severely hindered in their acceptable input size. To double the input size of an algorithm that follows an exponential growth, one would have to get a computer $R$ times faster (up to a constant of course).
 
 In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. But it is not always about chosing one over the other. It is evident that a better algorithm will let you do even more with better hardware. A logarithmic algorithm will perform exponentially better with better hardware. In other words, hardware upgrade is all the more justified when it runs a good algorithm.
+
+### References
+    - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.

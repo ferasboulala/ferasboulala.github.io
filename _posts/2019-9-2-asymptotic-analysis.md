@@ -59,4 +59,4 @@ Notice how the slowest growing functions provide the largest growing ratio of in
 In conclusion, it appears that a better algorithm will usually beat better hardware, especially when the time complexity is undesirable. But it is not always about chosing one over the other. It is evident that a better algorithm will let you do even more with better hardware. A logarithmic algorithm will perform exponentially better with better hardware. In other words, hardware upgrade is all the more justified when it runs a good algorithm.
 
 ### References
-    - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.
+ - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.

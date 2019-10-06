@@ -64,4 +64,4 @@ As expected, it looks like picking more elements to get a better probability of 
 What if we wanted a guarantee on the behavior of `quicksort` ? What if we selected the true median with a common algorithm like `median-of-median` that runs in $O(n)$. That would not change the time complexity of the algorithm but it would heavily impact the runtime of the algorithm nonetheless, because of the hidden constants. Given the previous results, it is deemed better to fallback to a simple median strategy that yields good results most of the time and opt for other sorting algorithms like `mergesort` or `heapsort` for systems that require guarantees.
 
 ### References
-    - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.
+ - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.

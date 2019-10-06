@@ -93,4 +93,4 @@ And there we have it, the third case of the theorem. The two others can be deriv
 Note: This is by no means a proof to the theorem. The assumption on $f$ being a polynomial function does not cover all the cases.
 
 ### References
-    - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.
+ - Cormen, T. H., & Cormen, T. H. (2001). Introduction to algorithms. Cambridge, Mass: MIT Press.

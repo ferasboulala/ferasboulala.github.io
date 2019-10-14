@@ -9,7 +9,7 @@ The time taken by quicksort can be modeled by the following recurrence:
 
 $$T(n) = T(q) + T(n - q) + cn \ \ 1 \leq q \leq n - 1$$
 
-Note that an ideal split would be when $1=\frac{n}{2}$ and the worst split is when $q = \{1, n - 1\}$. Using the Master Theorem, it can be shown that for any value of $1$ that is not a proportion of $n$, $T(n) \in \Theta(n^2)$. Sometimes, it is convenient to rewrite the recurrence with a proportion term, $\alpha$ and it is that form that we will use for the remainder of this post.
+Note that an ideal split would be when $q=\frac{n}{2}$ and the worst split is when $q = \{1, n - 1\}$. Using the Master Theorem, it can be shown that for any value of $q$ that is not a proportion of $n$, $T(n) \in \Theta(n^2)$. Sometimes, it is convenient to rewrite the recurrence with a proportion term, $\alpha$ and it is that form that we will use for the remainder of this post.
 
 $$T(n) = T(\alpha n) + T((1-\alpha)n) + cn \ \ 0 < \alpha < 1 \tag{1}$$
 

@@ -3,7 +3,7 @@ layout: post
 title: "Master Theorem: An Intuitive Approach"
 ---
 
-In this post, I would like to go through an intuitive approach leading to the Master Theorem. It is a theorem used in computer science and mathematics to get the asymptotical analysis of a divide and conquer algorithm. Formally, it is used to solve a reccurence.
+In this post, I would like to go through an intuitive reasoning that will leading to the Master Theorem. It is a theorem used in computer science and mathematics to get the asymptotical runtime of a divide and conquer algorithm. More precisely, it is used to solve a reccurence.
 
 ## Divide And Conquer
 Divide and conquer is a class of algorithms that aim to solve a problem by dividing it into smaller chunks and recursively solving them. Generally, once the recursion is over, there is a final step that aims to combine the result of the recursive calls into a valid output.

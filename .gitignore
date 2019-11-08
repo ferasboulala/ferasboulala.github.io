@@ -1,4 +1,6 @@
 _site
+_code/__pycache__
+.jekyll-cache
 .DS_Store
 .jekyll
 .jekyll-metadata

@@ -66,5 +66,5 @@ struct UserStruct {
 };
 ```
 
-I was made aware of this when I stumbled upon Linux data structures. Unlike C++, C dos not have a standard library for general purpose data structures and algorithms (you could always use _gnulib_ but that comes at a very strong assumptions that you are using _autotools_. _glib_ is a good choice though.) and so I wondered how did the kernel writers achieve anything down there.
+I was made aware of this when I stumbled upon Linux data structures. Unlike C++, C does not have a standard library for general purpose data structures and algorithms (you could always use _gnulib_ but that comes at a very strong assumptions that you are using _autotools_. _glib_ is a good choice though.) and so I wondered how did the kernel writers achieve anything down there.
 

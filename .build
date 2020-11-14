@@ -1,0 +1,5 @@
+clone the repo
+bundle init
+bundle install
+bundle add jekyll
+bundle exec jekyll serve

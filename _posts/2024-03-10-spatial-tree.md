@@ -3,6 +3,6 @@ layout: post
 title: "Spatial Tree"
 ---
 
-[Demo](/wasm/draw.html)
+Fast implementation of a quadtree.
 
-TODO
+[Demo](/wasm/draw.html)
